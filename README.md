@@ -4,9 +4,19 @@ The **org spine**. Shared issue templates, PR templates, reusable workflows,
 ADR conventions, and the Claude Code Action wiring used across every
 `simply-complex-systems` repo.
 
-This repo is **private**. Files in its `.github/` directory propagate as
-default community health files to other private repos in the org that don't
-override them locally.
+This repo is **public** by deliberate exception to the org's default-private
+posture. Two reasons it has to be public:
+1. GitHub free-tier orgs cannot share private-repo reusable workflows across
+   repos. Public is the only way the spine workflows are callable from every
+   repo in the org.
+2. Default community health files (issue templates, PR template, SECURITY.md,
+   CONTRIBUTING.md) inherit cleanly from a public `.github` repo to all repos.
+
+Nothing sensitive lives here — only conventions, templates, and wirings to
+public Actions. Project repos remain private.
+
+See [SETUP.md](./SETUP.md) for outstanding manual setup (Actions secrets,
+Projects v2 scopes, Dependabot, secret scanning, multi-machine bring-up).
 
 ## What lives here
 

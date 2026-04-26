@@ -1,0 +1,48 @@
+# Dependabot — security-only, manual review
+# Org policy: Dependabot opens PRs for security vulnerabilities only.
+# Reviewer merges after CI passes. No version-update PRs by default.
+#
+# Copy this file to your repo as .github/dependabot.yml and uncomment the
+# ecosystem stanzas that apply.
+
+version: 2
+updates:
+  # GitHub Actions used in workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "chore"
+      - "P3"
+
+  # Python (uncomment if requirements.txt or pyproject.toml exists)
+  # - package-ecosystem: "pip"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   open-pull-requests-limit: 5
+  #   labels:
+  #     - "chore"
+  #     - "P3"
+
+  # Node (uncomment if package.json exists)
+  # - package-ecosystem: "npm"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   open-pull-requests-limit: 5
+  #   labels:
+  #     - "chore"
+  #     - "P3"
+
+  # Docker (uncomment if Dockerfile exists)
+  # - package-ecosystem: "docker"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   open-pull-requests-limit: 5
+  #   labels:
+  #     - "chore"
+  #     - "P3"
