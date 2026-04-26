@@ -1,0 +1,40 @@
+name: release-please (reusable)
+
+# Reusable workflow for Conventional Commits → automated releases.
+# Calling pattern from a repo's .github/workflows/release.yml:
+#
+#   on:
+#     push:
+#       branches: [main]
+#   jobs:
+#     release:
+#       uses: simply-complex-systems/.github/.github/workflows/release-please-reusable.yml@main
+#       with:
+#         release-type: simple   # or "python", "node", "go", etc.
+#       permissions:
+#         contents: write
+#         pull-requests: write
+
+on:
+  workflow_call:
+    inputs:
+      release-type:
+        description: "release-please release type (simple | python | node | go | ...)"
+        type: string
+        default: simple
+      package-name:
+        description: "Package name (defaults to repo name)"
+        type: string
+        default: ""
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          release-type: ${{ inputs.release-type }}
+          package-name: ${{ inputs.package-name }}

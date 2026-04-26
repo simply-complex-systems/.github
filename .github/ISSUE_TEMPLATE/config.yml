@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Architectural Decision Record (ADR)
+    url: https://github.com/simply-complex-systems/.github/blob/main/docs/adr/0000-template.md
+    about: For locked decisions, copy the ADR template into the repo's docs/adr/ instead of opening an issue.

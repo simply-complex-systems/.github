@@ -1,0 +1,41 @@
+name: ADR draft
+description: Propose an Architectural Decision Record. The issue is the discussion; the merged ADR markdown file is the record.
+labels: ["adr", "needs-triage"]
+title: "ADR: <decision in active voice>"
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What forces are at play? What's the situation calling for a decision?
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Proposed decision
+      description: One sentence. Active voice. "We will ..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: At least one. Why was each rejected?
+    validations:
+      required: true
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences
+      description: What becomes easier? What becomes harder? What's the reversal cost?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        Once the decision is locked, copy `docs/adr/0000-template.md` from
+        `simply-complex-systems/.github` into this repo's `docs/adr/` as
+        `NNNN-short-slug.md`, fill in the agreed text, open a PR, merge.
+        Close this issue when the ADR PR merges.

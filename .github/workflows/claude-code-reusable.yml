@@ -1,0 +1,38 @@
+name: Claude Code (reusable)
+
+# Reusable workflow that wires up the Anthropic Claude Code GitHub Action.
+# Repos call this from their own .github/workflows/claude.yml with the same
+# trigger events. Calling pattern:
+#
+#   jobs:
+#     claude:
+#       uses: simply-complex-systems/.github/.github/workflows/claude-code-reusable.yml@main
+#       secrets:
+#         ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+#
+# Requires repo or org Actions secret: ANTHROPIC_API_KEY.
+
+on:
+  workflow_call:
+    secrets:
+      ANTHROPIC_API_KEY:
+        required: true
+
+jobs:
+  claude:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Action
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}

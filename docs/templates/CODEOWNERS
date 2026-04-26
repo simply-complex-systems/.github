@@ -1,0 +1,14 @@
+# CODEOWNERS — copy into THIS repo's .github/CODEOWNERS
+# CODEOWNERS does NOT propagate from the org spine; it must live in each repo.
+#
+# Syntax: <path-glob>  <@user-or-team> [<@additional>]
+# Patterns later in the file override earlier ones.
+#
+# Eric is the default owner of everything until otherwise noted.
+
+* @epedersen1981
+
+# Examples — uncomment and adapt:
+# /docs/                @epedersen1981
+# /.github/workflows/   @epedersen1981
+# /src/critical/        @epedersen1981

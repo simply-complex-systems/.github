@@ -1,0 +1,43 @@
+name: Bug
+description: Something broke or behaves wrong.
+labels: ["bug", "needs-triage"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: One or two sentences. What did you observe?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: One sentence is fine.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Numbered list. Include commands, inputs, environment if relevant.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: false
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Machine (R2D2 / P99 / Actions runner), OS, branch, commit SHA if known.
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / hypothesis
+      description: Anything you suspect. Optional.
+    validations:
+      required: false
